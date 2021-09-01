@@ -5,13 +5,9 @@ const sql = require("./db.js");
 // Defining a constructor for handling single records
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 const Customer = function(customer) {
-  this.id = customer.id;
-  this.level_col = customer.level_col;
-  this.cvss = customer.cvss;
-  this.title = customer.title;
-  this.vulnerability = customer.vulnerability;
-  this.solution = customer.solution;
-  this.reference_col = customer.reference_col;
+  this.first_name = customer.first_name;
+  this.last_name = customer.last_name;
+  this.email = customer.email;
 };
 
 
@@ -35,14 +31,14 @@ reference_col	       varchar(255)
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Customer.bulkCreate = (req_arr,result) =>{
-  sql.query("INSERT INTO customers(id, level_col, cvss, title, vulnerability, solution, reference_col) VALUES ?", [req_arr], (err, res) => {
+  sql.query("INSERT INTO customers VALUES ?", [req_arr], (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
       return;
     }
     
-    console.log("created customer: ", { id: res.insertId, number_of_records: req_arr.length });
+    console.log("created customer: ", { number_of_records: req_arr.length });
     result(null, {records:req_arr.length, status:'Sucess'});
   });
 };
@@ -61,8 +57,8 @@ Customer.create = (newCustomer, result) => {
       return;
     }
     
-    console.log("created customer: ", { id: res.insertId, ...newCustomer });
-    result(null, { id: res.insertId, ...newCustomer });
+    console.log("created customer: ", { ...newCustomer });
+    result(null, { ...newCustomer });
   });
 };
 
@@ -87,7 +83,7 @@ Customer.findById = (customerId, result) => {
     }
 
     // not found Customer with the id
-    result({ kind: "not_found" }, null);
+    result({ kind: "not_foundsssss" }, null);
   });
 };
 

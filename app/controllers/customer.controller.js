@@ -40,13 +40,9 @@ exports.create = (req, res) => {
 
   // Create a Customer Object
   const customer = new Customer({
-    id: req.body.id,
-    level_col: req.body.level,
-    cvss: req.body.cvss,
-    title: req.body.title,
-    vulnerability: req.body.vulnerability,
-    solution: req.body.solution,
-    reference_col: req.body.reference,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    email: req.body.email,
   });
 
  // calling create() in customer.models, to save the received data

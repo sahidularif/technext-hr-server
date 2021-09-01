@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-express-mysql",
+  "name": "technext-hr",
   "version": "1.0.0",
-  "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
+  "description": "Node.js Restful API with Node.js, Express, Mailtrap and MySQL",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,11 +13,12 @@
     "mysql",
     "restapi"
   ],
-  "author": "krishankantray",
+  "author": "MS-ARIF",
   "license": "KK",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mysql": "^2.17.1"
   }
