@@ -13,12 +13,4 @@ module.exports = app => {
   // GET call to retrieve a single record with ID
   app.get("/customers/:customerId", customers.findOne);
 
-  // PUT call to upadte record with "ID" and complete body
-  app.put("/customers/:customerId", customers.update);
-
-  // DELET call to Delete a recod with ID
-  app.delete("/customers/:customerId", customers.delete);
-
-  // DELETE call to delete all the records
-  app.delete("/customers", customers.deleteAll);
 };
